@@ -23,6 +23,13 @@ class Settings(BaseSettings):
     # ── Base de Datos (Supabase / PostgreSQL) ─────────────────────────────────
     DATABASE_URL: str = "postgresql+asyncpg://user:password@localhost:5432/inventory"
 
+    # ── Supabase (cliente Python supabase-py) ─────────────────────────────────
+    SUPABASE_URL: str = ""
+    SUPABASE_KEY: str = ""  # service_role key (nunca la anon key en backend)
+
+    # ── Inventario — ubicación por defecto para recepciones de restock ─────────
+    DEFAULT_STOCK_LOCATION_ID: int = 100  # código U-100
+
     # ── Google Gemini ─────────────────────────────────────────────────────────
     GEMINI_API_KEY: str = ""
     GEMINI_MODEL: str = "gemini-1.5-flash"
